@@ -8,6 +8,8 @@ app.engine('handlebars',handlebars.engine);
 
 app.set('view engine','handlebars');
 
+app.use(express.static('/public'));
+
 app.get('/',function(req,res){
 	res.render('home');
 });
@@ -15,5 +17,9 @@ app.get('/',function(req,res){
 app.use(function(req,res,next){
 	res.status(404);
 	res.render('404');
+});
+
+app.listen(app.get('port'),function(){
+	console.log("Listening");
 });
 
