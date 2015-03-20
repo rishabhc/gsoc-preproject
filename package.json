@@ -1,0 +1,22 @@
+{
+  "name": "GSoC-Microdb",
+  "version": "1.0.0",
+  "description": "Pre-project for GSoC '15 proposal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishabhc/gsoc-preproject.git"
+  },
+  "author": "Rishabh Chhabra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishabhc/gsoc-preproject/issues"
+  },
+  "homepage": "https://github.com/rishabhc/gsoc-preproject",
+  "dependencies": {
+    "express": "^4.12.3"
+  }
+}
