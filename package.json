@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rishabhc/gsoc-preproject",
   "dependencies": {
+    "body-parser": "^1.12.2",
     "express": "^4.12.3",
     "express3-handlebars": "^0.5.2"
   }
