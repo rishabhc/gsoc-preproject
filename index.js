@@ -31,21 +31,32 @@ app.post('/create',function(req,res){
 });
 
 app.post('/update/:file/:val',function(req,res){
-	var filename = 'schema/'+res.body.file+'.json';
+	var filename = './schema/'+req.params.file+'.json';
 	console.log(filename);
 	fs.exists(filename,function(exists){
 		if(exists) {
 			var file = require(filename);
-			file.val = req.val;
+			file.val = req.params.val;
 			fs.writeFile(filename, JSON.stringify(file), function (err) {
 			  if (err) return console.log(err)
-			  console.log(JSON.stringify(file));
-			  console.log('writing to ' + filename);
+			  res.send('Updated file ' + filename);
 			});
-			res.send('updated');
 		}
 		else {
 			res.send("File " + res.file + " does not exist.")
+		}
+	});
+});
+
+app.post('/delete',function(req,res){
+	var filename = './schema/'+ req.body.filename + '.json';
+	fs.exists(filename,function(exists){
+		if(exists) {
+			fs.unlink(filename,function(err){
+				if(err)
+					res.send("Something went wrong!");
+				res.send(filename + ' deleted successfully');
+			})
 		}
 	});
 });
