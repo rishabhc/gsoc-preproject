@@ -42,7 +42,21 @@ $(document).ready(function(){
 	})
 
 	$('.update').click(function(){
-		
+
 	});
 
+	$('.delete').click(function(){
+		var file = getInputText();
+		if(file.error)
+			alert("Please enter a file name");
+		else {
+			$.ajax({
+				method: "POST",
+				url: '/delete',
+				data : {filename: file.input}
+			}).done(function(data){
+				updateResults(data);
+			});
+		}
+	});
 });
