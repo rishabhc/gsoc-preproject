@@ -26,7 +26,7 @@ app.get('/read/:file',function(req,res){
 		if(exists) {
 			fs.readFile(filename,'utf-8',function(err,data){
 				if (err) res.send(err);
-					res.send(JSON.parse(data));
+					res.send(data);
 			});
 		}
 		else {
