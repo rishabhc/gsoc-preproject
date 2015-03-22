@@ -92,6 +92,9 @@ app.post('/delete',function(req,res){
 				res.send(filename + ' deleted successfully');
 			})
 		}
+		else {
+			res.send('File ' + filename + ' does not exist.');
+		}
 	});
 });
 
