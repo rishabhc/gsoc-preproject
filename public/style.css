@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+html, button, input, select, textarea,
+.pure-g [class*="pure-u"] {
+  font-family: 'Lato',sans-serif; }
+
+body {
+  background-color: #edf0f0; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+header {
+  height: 15vh;
+  background-color: #2A2C3C; }
+
+.head {
+  font-size: 300%;
+  font-weight: 300;
+  color: #C1C4D8;
+  line-height: 15vh; }
+  .head span {
+    margin-left: 150px; }
+
+.nav {
+  line-height: 15vh;
+  font-size: 130%;
+  color: #63647A; }
+  .nav span:hover {
+    color: #C1C4D8; }
+
+.json-results {
+  border: 1px solid #4F4F4F;
+  height: 30vh;
+  margin-top: 20px; }
+
+.inner {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  font-size: 120%;
+  color: #6B6C73;
+  font-weight: 700; }
+
+form {
+  margin: auto;
+  width: 50%; }
+
+input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  text-align: center; }
+
+.center {
+  text-align: center; }
+
+/*# sourceMappingURL=style.css.map */
