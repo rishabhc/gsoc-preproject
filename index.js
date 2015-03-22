@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var jsonql = require('jsonql');
 var bodyParser = require('body-parser');
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
 
@@ -23,8 +24,7 @@ app.get('/read/:file',function(req,res){
 		if(exists) {
 			fs.readFile(filename,'utf-8',function(err,data){
 				if (err) res.send(err);
-				console.log(data);
-				res.send(JSON.parse(data));
+					res.send(JSON.parse(data));
 			});
 		}
 		else {
@@ -32,6 +32,22 @@ app.get('/read/:file',function(req,res){
 		}
 	});
 });
+
+app.get('/read/:file/:query',function(req,res){
+	var filename = './schema/'+req.params.file+'.json';
+	fs.exists(filename,function(exists){
+		if(exists) {
+			fs.readFile(filename,'utf-8',function(err,data){
+				if (err) res.send(err);
+				res.send(JSON.stringify(jsonql(req.params.query,JSON.parse(data))));
+			});
+		}
+		else {
+			res.send('The requested file does not exist');
+		}
+	});
+});
+
 
 app.post('/create',function(req,res){
 	var filename = 'schema/'+req.body.filename+'.json';
