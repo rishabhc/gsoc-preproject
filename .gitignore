@@ -1,3 +1,5 @@
 # ignore packages installed by npm
 node_modules
 jsonql
+.sass-cache/
+public/style.css.map
