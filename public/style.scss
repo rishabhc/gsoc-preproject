@@ -57,7 +57,7 @@ header {
 
 form {
 	margin: auto;
-	width: 50%;
+	width: 60%;
 }
 
 input {
@@ -65,10 +65,12 @@ input {
 	padding: 15px;
 	border: none;
 	text-align: center;
-	-webkit-transition: all 2s; // Chrome
-  -moz-transition: all 2s; // Mozilla
-  -o-transition: all 2s; // Opera
-  transition: all 2s;
+}
+
+#submit {
+	width: 20%;
+	margin-left: 40%;
+	margin-top: 2%;
 }
 
 .center {
