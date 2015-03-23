@@ -28,9 +28,15 @@
 		</a>
 	</div>
 </div>
-<div class = "pure-g search-bar">
+<div class = "pure-g search-bar search-a hidden">
 	<form method = "get" action = "/">
-		<input name="query" type="text" placeholder="Enter the name of a file, updated values or a query" onfocus="this.placeholder=''" onblur="this.placeholder='Enter the name of a file, updated values or a query'" autocomplete="off">
+		<input name="query" type="text" placeholder="Enter the name of a file" onfocus="this.placeholder=''" onblur="this.placeholder='Enter the name of a file'" autocomplete="off">
+	</form>
+</div>
+<div class = "pure-g search-bar search-b">
+	<form method = "get" action = "/">
+		<input class = "search-file" name="query" type="text" placeholder="Enter the name of a file" onfocus="this.placeholder=''" onblur="this.placeholder='Enter the name of a file'" autocomplete="off">
+		<input class = "search-query" name="query" type="text" placeholder="Enter a query to execute or leave it blank to read the whole file" onfocus="this.placeholder=''" onblur="this.placeholder='Enter a query to execute or leave it blank to read the whole file'" autocomplete="off">
 	</form>
 </div>
 <div class = "pure-g result">

@@ -65,8 +65,17 @@ input {
 	padding: 15px;
 	border: none;
 	text-align: center;
+	-webkit-transition: all 2s; // Chrome
+  -moz-transition: all 2s; // Mozilla
+  -o-transition: all 2s; // Opera
+  transition: all 2s;
 }
 
 .center {
 	text-align: center
+}
+
+.search-file {
+	width: 40%;
+	margin: 2% 30%;
 }
