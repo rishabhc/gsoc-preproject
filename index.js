@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var url = require('url');
 var jsonql = require('jsonql');
 var bodyParser = require('body-parser');
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
@@ -64,16 +65,23 @@ app.post('/create',function(req,res){
 	});
 });
 
-app.post('/update/:file/:val',function(req,res){
+app.get('/update/:file',function(req,res){
 	var filename = './schema/'+req.params.file+'.json';
 	console.log(filename);
 	fs.exists(filename,function(exists){
 		if(exists) {
 			var file = require(filename);
-			file.val = req.params.val;
-			fs.writeFile(filename, JSON.stringify(file), function (err) {
+			var url_parts = url.parse(req.url,'true');
+			var query = url_parts.query;
+
+			//merging json objects, to be exported to another function 
+			var newFile={};
+			for(var key in file) newFile[key]=file[key];
+			for(var key in query) newFile[key]=query[key];
+			
+			fs.writeFile(filename, JSON.stringify(newFile), function (err) {
 			  if (err) return console.log(err)
-			  res.send('Updated file ' + filename);
+			  res.send('Updated file: ' + JSON.stringify(newFile));
 			});
 		}
 		else {
