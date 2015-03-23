@@ -1,0 +1,24 @@
+{
+  "name": "jsonql",
+  "version": "0.0.1",
+  "description": "An extended version of JSONPath with additional data filtering, sorting, mapping, and matching.  A port of dojo JSONQuery.",
+  "main": "index.js",
+  "keywords": [
+    "json",
+    "query",
+    "data"
+  ],
+  "scripts": {
+    "test": "node test/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PencilCode/jsonql.git"
+  },
+  "author": "David Bau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PencilCode/jsonql/issues"
+  },
+  "homepage": "https://github.com/PencilCode/jsonql"
+}

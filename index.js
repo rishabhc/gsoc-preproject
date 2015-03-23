@@ -1,7 +1,7 @@
 var express = require('express');
 var fs = require('fs');
 var url = require('url');
-var jsonql = require('jsonql');
+var jsonql = require('./jsonql');
 var bodyParser = require('body-parser');
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
 
