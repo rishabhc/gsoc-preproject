@@ -3,11 +3,13 @@ var fs = require('fs');
 var url = require('url');
 var jsonql = require('./jsonql');
 var bodyParser = require('body-parser');
+var port = OPENSHIFT_NODEJS_PORT || 8000;
+var ip = OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var handlebars = require('express3-handlebars').create({defaultLayout:'main'});
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', port);
 
 app.engine('handlebars',handlebars.engine);
 app.set('view engine','handlebars');
