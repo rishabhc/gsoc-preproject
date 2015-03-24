@@ -1,5 +1,5 @@
 # Microdatabase for beginners
-This repository contains the pre-project for my GSoC '15 proposal
+This repository contains the pre-project for my GSoC '15 proposal under Pencil Code
 
 ## Usage
 1. Clone the repository
