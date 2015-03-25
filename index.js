@@ -113,5 +113,5 @@ app.use(function(req,res,next){
 });
 
 app.listen(app.get('port'),function(){
-	console.log("Listening");
+	console.log("Listening on " + app.get('port'));
 });
