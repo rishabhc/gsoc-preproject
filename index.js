@@ -1,5 +1,6 @@
 var express = require('express');
 var fs = require('fs');
+var jwt = require('jsonwebtoken');
 var url = require('url');
 var jsonql = require('./jsonql');
 var bodyParser = require('body-parser');
@@ -104,6 +105,31 @@ app.post('/delete',function(req,res){
 		else {
 			res.send('File ' + filename + ' does not exist.');
 		}
+	});
+});
+
+app.post('/secret',function(req,res){
+	var userName = req.body.name;
+	var dirname = './schema/'+userName;
+	fs.lstat(dirname,function(err,stats){
+		if(err) {
+			fs.mkdir(dirname,function(e){
+				if(e)
+					res.send({error:true,message:"Some error occured, please try again!"});
+				else {
+					var genToken = jwt.sign({name:userName},'microdb');
+					res.send({error:false,token:genToken,message:"Token generation successful"});
+				}
+			});
+		}
+		else {
+			if(stats.isDirectory()) {
+				 var response = {error:true,message:"The username already exists!"};
+				res.send(response);
+				}
+				else 
+					res.send({error:true,message:"An unkown error occured, please try again."});
+			}
 	});
 });
 
