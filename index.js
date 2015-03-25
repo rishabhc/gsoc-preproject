@@ -98,7 +98,7 @@ app.post('/delete',function(req,res){
 			fs.unlink(filename,function(err){
 				if(err)
 					res.send("Something went wrong!");
-				res.send(filename + ' deleted successfully');
+				res.send('File '+ req.body.filename + ' deleted successfully');
 			})
 		}
 		else {
