@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	function getInputText(){
-		var ret = {'error':false,'input':$('.search-file').val(),'query':$('.search-query').val()};
-		if(ret.input == "") {
+		var ret = {'error':false,'input':$('.search-file').val(),'query':$('.search-query').val(),'token':$('.token').val()};
+		if(ret.input == "" || ret.token == "") {
 			ret.error = true;
 		}
 		return ret;
@@ -12,14 +12,14 @@ $(document).ready(function(){
 	}
 
 	$('.create').click(function(){
-		var file = getInputText('.search-a');
+		var file = getInputText('.search-b');
 		if(file.error)
-			alert("Please enter a file name");
+			alert("Please enter a file name and a token");
 		else {
 			$.ajax({
 				method: "POST",
 				url: '/create',
-				data : {filename: file.input}
+				data : {filename: file.input, token:file.token}
 			}).done(function(data){
 				updateResults(data);
 			});
@@ -29,9 +29,9 @@ $(document).ready(function(){
 	$('.read').click(function(){
 		var formInput = getInputText('search-b');
 		if(formInput.error)
-			alert("Please enter a filename");
+			alert("Please enter a filename and a token");
 		else {
-			var url = '/read/'+formInput.input+'/'+formInput.query;
+			var url = '/read/'+formInput.token+'/'+formInput.input+'/'+formInput.query;
 			$.ajax({
 				method: "GET",
 				url: url
@@ -44,9 +44,9 @@ $(document).ready(function(){
 	$('.update').click(function(){
 		var formInput = getInputText('search-b');
 		if(formInput.error)
-			alert("Please enter a filename");
+			alert("Please enter a filename and a token");
 		else {
-			var url = '/update/'+formInput.input+'?'+formInput.query;
+			var url = '/update/'+formInput.token+'/'+formInput.input+'?'+formInput.query;
 			
 			$.ajax({
 				method: "GET",
@@ -59,11 +59,13 @@ $(document).ready(function(){
 	});
 
 	$('.delete').click(function(){
-		var file = getInputText('.search-a');
+		var formInput = getInputText('search-b');
+		if(formInput.error)
+			alert("Please enter a filename and a token");
 		$.ajax({
 			method: "POST",
 			url: '/delete',
-			data : {filename: file.input}
+			data : {filename: formInput.input,token:formInput.token}
 		}).done(function(data){
 			updateResults(data);
 		});
