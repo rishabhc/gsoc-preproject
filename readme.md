@@ -1,5 +1,5 @@
 # Microdatabase for beginners
-This repository contains the pre-project for my GSoC '15 proposal under Pencil Code. The project is aimed at making it easier for teachers to teach the concept of databases and information management and providing uncomplicated platform for teachers and students to contribute data.
+This repository contains the pre-project for my GSoC '15 proposal under Pencil Code. The project is aimed at making it easier for teachers to teach the concept of databases and information management and providing uncomplicated platform for teachers and students to contribute data. The project is live at http://vps.rkravi.com:3000/.
 
 ## Details
 The project presents a straightforward UI to perform CRUD operations on a microdatabase. The authetication is done through secret tokens.
