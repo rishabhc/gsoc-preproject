@@ -1,7 +1,9 @@
 <div class = "pure-g search-bar search-b">
 	<form>
-		<input class = "search-file" name="query" type="text" placeholder="Enter the name of a file" onfocus="this.placeholder=''" onblur="this.placeholder='Enter the name of a file'" autocomplete="off">
+		<input class = "search-file" name="filename" type="text" placeholder="Enter the name of a file" onfocus="this.placeholder=''" onblur="this.placeholder='Enter the name of a file'" autocomplete="off">
 		<input class = "search-query" name="query" type="text" placeholder="Enter a query to execute, leave it blank to read the whole file or add values to update seperated by an '&'" onfocus="this.placeholder=''" onblur="this.placeholder='Enter a query to execute, leave it blank to read the whole file or add values to update seperated by an &'" autocomplete="off">
+		<input class = "token" name="token" type="text" placeholder="Enter the secret token" onfocus="this.placeholder=''" onblur="this.placeholder='Enter the secret token'" autocomplete="off">
+		<span class = "token-generator pure-u-1 center"><a href = "#">Don't have a secret token? Click here to generate one!</a></span>
 	</form>
 </div>
 <div class = "pure-g options">

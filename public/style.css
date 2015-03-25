@@ -66,4 +66,10 @@ input {
   width: 40%;
   margin: 2% 30%; }
 
+.search-query {
+  margin: 0 0 2% 0; }
+
+.token-generator {
+  text-decoration: underline; }
+
 /*# sourceMappingURL=style.css.map */

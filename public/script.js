@@ -68,4 +68,23 @@ $(document).ready(function(){
 			updateResults(data);
 		});
 	});
+
+	$('.token-generator').click(function(){
+		updateResults('Generating token...');
+		var name = prompt('Please enter your name');
+		if(name != null) {
+			$.ajax({
+				method: "POST",
+				url: '/secret',
+				data : {name: name}
+			}).done(function(data){
+				if(!data.error)
+				 $('.token').val(data.token);
+				updateResults(data.message);
+			});
+		}
+		else {
+			updateResults('Token generation failed. You did not enter a name');
+		}
+	});
 });
