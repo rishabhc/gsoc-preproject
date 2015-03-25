@@ -32,7 +32,9 @@ header {
 .json-results {
   border: 1px solid #4F4F4F;
   height: 30vh;
-  margin-top: 20px; }
+  margin-top: 20px;
+  font-weight: 400;
+  text-align: center; }
 
 .inner {
   background-color: #ffffff;
