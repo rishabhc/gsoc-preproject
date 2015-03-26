@@ -41,7 +41,8 @@ If you face any difficulty, feel free to open an issue.
 
 ## Features to be implemented
 1. Add API documentation
-2. Add passwords for authentication
-3. Protect against vulnerabilities
+2. Handle form submission on enter (which doesn't work currently) through JavaScript.
+3. Add passwords for authentication
+4. Protect against vulnerabilities
 
 
