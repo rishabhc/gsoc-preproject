@@ -4,7 +4,8 @@ html, button, input, select, textarea,
   font-family: 'Lato',sans-serif; }
 
 body {
-  background-color: #edf0f0; }
+  background-color: #edf0f0;
+  overflow-y: hidden; }
 
 a {
   color: inherit;
@@ -70,6 +71,7 @@ input {
   margin: 0 0 2% 0; }
 
 .token-generator {
-  text-decoration: underline; }
+  text-decoration: underline;
+  margin: 2% 0; }
 
 /*# sourceMappingURL=style.css.map */

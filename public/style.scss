@@ -7,6 +7,7 @@ html, button, input, select, textarea,
 
 body {
 	background-color : #edf0f0;
+	overflow-y : hidden;
 }
 
 a { 
@@ -90,4 +91,5 @@ input {
 
 .token-generator {
 	text-decoration: underline;
+	margin: 2% 0;
 }
