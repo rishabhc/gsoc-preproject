@@ -9,7 +9,7 @@ The project presents a straightforward UI to perform CRUD operations on a microd
 Click on `Don't have a secret token? Click here to generate one!` option and enter your name to generate a secret token.
 
 ### Creating a database
-Enter the name of a microdatabase(file) you want to create and press enter. 
+Enter the name of a microdatabase(file) you want to create and press `Create`. 
 You can leave the second input blank.
 
 ### Reading a database
