@@ -36,8 +36,9 @@ If you face any difficulty, feel free to open an issue.
 ## Setting Up
 1. Clone the repository
 2. Run `npm install`
-3. Run `node index.js`
-4. The application would be running on `localhost:3000`
+3. Make a directory named schema in root folder `mkdir schema`
+4. Run `node index.js`
+5. The application would be running on `localhost:3000`
 
 ## Features to be implemented
 1. Add API documentation
