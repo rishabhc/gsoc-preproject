@@ -46,18 +46,30 @@ app.get('/read/:token/:file',function(req,res){
 });
 
 app.get('/read/:token/:file/:query',function(req,res){
-	var filename = './schema/'+req.params.file+'.json';
-	fs.exists(filename,function(exists){
-		if(exists) {
-			fs.readFile(filename,'utf-8',function(err,data){
-				if (err) res.send(err);
-				res.send(JSON.stringify(jsonql(req.params.query,JSON.parse(data))));
-			});
-		}
-		else {
-			res.send('The requested file does not exist');
-		}
-	});
+	var token = req.params.token;
+	var verified = verifyToken(token);
+	if(verified.err) {
+		res.send("Wrong token!");
+	}
+	else {
+		var filename = './schema/'+verified.name+'/'+req.params.file+'.json';
+		fs.exists(filename,function(exists){
+			if(exists) {
+				fs.readFile(filename,'utf-8',function(err,data){
+					if (err) res.send(err);
+					try {
+						res.send(JSON.stringify(jsonql(req.params.query,JSON.parse(data))));
+					}
+					catch (e) {
+						res.send("Error! Are you sure you entered a correct dojox json query in the second input?");
+					}
+				});
+			}
+			else {
+				res.send('The requested file does not exist');
+			}
+		});
+	}
 });
 
 
