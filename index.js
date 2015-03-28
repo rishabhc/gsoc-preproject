@@ -93,13 +93,13 @@ app.get('/update/:token/:file',function(req,res){
 		console.log(filename);
 		fs.exists(filename,function(exists){
 			if(exists) {
-				var file = require(filename);
+				var file = JSON.parse(fs.readFileSync(filename, 'utf8'));
 				var url_parts = url.parse(req.url,'true');
 				var query = url_parts.query;
 
 				//merging json objects, to be exported to another function 
 				var newFile={};
-				for(var key in file) newFile[key]=file[key];
+				for(var key in file){ newFile[key]=file[key]; console.log(file[key]); }
 				for(var key in query) newFile[key]=query[key];
 				
 				fs.writeFile(filename, JSON.stringify(newFile), function (err) {
